@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use App\SharedKernel\Infrastructure\Http\Middleware\SessionMiddleware;
+use Slim\App;
 
 return function (App $app) {
 };
