@@ -5,10 +5,7 @@ namespace App\SharedKernel\Application\Settings;
 
 class Settings implements SettingsInterface
 {
-    /**
-     * @var array
-     */
-    private $settings;
+    private array $settings;
 
     /**
      * Settings constructor.
@@ -26,5 +23,33 @@ class Settings implements SettingsInterface
     public function get(string $key = '')
     {
         return (empty($key)) ? $this->settings : $this->settings[$key];
+    }
+
+    public function getIterative(string ...$keys)
+    {
+        if (empty($keys)) {
+            return $this->settings;
+        }
+
+        $tmp = null;
+
+        foreach ($keys as $key) {
+            if (is_null($tmp) && !array_key_exists($key, $this->settings)) {
+                return null;
+            }
+
+            if (is_null($tmp)) {
+                $tmp = $this->settings[$key];
+                continue;
+            }
+
+            if (!array_key_exists($key, $tmp)) {
+                return null;
+            }
+
+            $tmp = $tmp[$key];
+        }
+
+        return $tmp;
     }
 }
