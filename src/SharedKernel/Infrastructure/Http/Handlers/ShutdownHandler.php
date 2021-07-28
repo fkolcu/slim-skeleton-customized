@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\SharedKernel\Infrastructure\Http\Handlers;
 
-use App\Infrastructure\Http\ResponseEmitter\ResponseEmitter;
+use App\SharedKernel\Infrastructure\Http\ResponseEmitter\ResponseEmitter;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\HttpInternalServerErrorException;
 

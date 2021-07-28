@@ -1,21 +1,21 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\SharedKernel\Infrastructure\Http\Handlers;
 
-use App\Infrastructure\Http\Actions\ActionError;
-use App\Infrastructure\Http\Actions\ActionPayload;
-use Exception;
-use Psr\Http\Message\ResponseInterface as Response;
-use Slim\Exception\HttpBadRequestException;
-use Slim\Exception\HttpException;
-use Slim\Exception\HttpForbiddenException;
-use Slim\Exception\HttpMethodNotAllowedException;
-use Slim\Exception\HttpNotFoundException;
-use Slim\Exception\HttpNotImplementedException;
-use Slim\Exception\HttpUnauthorizedException;
-use Slim\Handlers\ErrorHandler as SlimErrorHandler;
 use Throwable;
+use Slim\Exception\HttpException;
+use Slim\Exception\HttpNotFoundException;
+use Slim\Exception\HttpForbiddenException;
+use Slim\Exception\HttpBadRequestException;
+use Slim\Exception\HttpUnauthorizedException;
+use Slim\Exception\HttpNotImplementedException;
+use Slim\Exception\HttpMethodNotAllowedException;
+use Slim\Handlers\ErrorHandler as SlimErrorHandler;
+use Psr\Http\Message\ResponseInterface as Response;
+use App\SharedKernel\Infrastructure\Http\Actions\ActionError;
+use App\SharedKernel\Infrastructure\Http\Actions\ActionPayload;
 
 class HttpErrorHandler extends SlimErrorHandler
 {
